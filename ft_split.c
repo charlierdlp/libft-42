@@ -6,7 +6,7 @@
 /*   By: cruiz-de <cruiz-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:45:22 by cruiz-de          #+#    #+#             */
-/*   Updated: 2020/01/29 18:52:51 by cruiz-de         ###   ########.fr       */
+/*   Updated: 2021/05/06 20:00:54 by cruiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static	size_t	twords(char const *s, char c)
 	return (num);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**ssplit;
 	size_t	i;
@@ -59,19 +59,16 @@ char			**ft_split(char const *s, char c)
 	j = 0;
 	if (s == NULL)
 		return (NULL);
-	if (!(ssplit = malloc(sizeof(char *) * (twords(s, c) + 1))))
+	ssplit = malloc(sizeof(char *) * (twords(s, c) + 1));
+	if (!ssplit)
 		return (NULL);
 	while (i < twords(s, c))
 	{
 		while (s[j] == c && s[j] != '\0')
-		{
 			j++;
-		}
 		ssplit[i] = ft_substr(s, j, lwords(&s[j], c));
 		while (s[j] != c && s[j] != '\0')
-		{
 			j++;
-		}
 		i++;
 	}
 	ssplit[i] = NULL;

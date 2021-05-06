@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cruiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cruiz-de <cruiz-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 18:04:36 by cruiz-de          #+#    #+#             */
-/*   Updated: 2020/01/10 18:44:45 by cruiz-de         ###   ########.fr       */
+/*   Updated: 2021/05/06 19:36:09 by cruiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	str1 = (char*)s1;
-	str2 = (char*)s2;
+	str1 = (char *)s1;
+	str2 = (char *)s2;
 	while (i < n)
 	{
 		if (str1[i] != str2[i])
